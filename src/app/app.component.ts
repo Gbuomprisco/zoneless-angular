@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { observed } from './observed';
 
 @Component({
   selector: 'app-root',
@@ -10,23 +9,19 @@ import { observed } from './observed';
 export class AppComponent {
   public data = [];
 
-  @observed()
   run(length: number) {
     this.clear();
     this.buildData(length);
   }
 
-  @observed()
   append(length: number) {
     this.buildData(length);
   }
 
-  @observed()
   removeAll() {
     this.clear();
   }
 
-  @observed()
   remove(item) {
     for (let i = 0, l = this.data.length; i < l; i++) {
       if (this.data[i].id === item.id) {
